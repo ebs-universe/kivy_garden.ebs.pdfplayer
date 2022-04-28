@@ -13,6 +13,7 @@ from kivy.properties import BooleanProperty
 from kivy.properties import NumericProperty
 from kivy.uix.floatlayout import FloatLayout
 from kivy.clock import Clock
+from kivy.clock import mainthread
 
 from kivy_garden.ebs.gallery import ImageGallery
 
@@ -119,6 +120,7 @@ class PDFPlayer(FloatLayout):
         else:
             return 0
 
+    @mainthread
     def step(self, *_):
         last_page = self._current_page
         self._current_page = self._next_page()
