@@ -117,11 +117,10 @@ class PDFPlayer(FloatLayout):
         if self._current_page < len(self._pages) - 1:
             return self._current_page + 1
         else:
-            if self.loop:
-                return 0
-            else:
+            if not self.loop:
                 self.stop()
                 self.dispatch('on_done')
+            return 0
 
     def on_done(self, *args):
         pass
