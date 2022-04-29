@@ -121,6 +121,9 @@ class PDFPlayer(FloatLayout):
             else:
                 self.dispatch('on_done')
 
+    def on_done(self, *args):
+        pass
+
     @mainthread
     def step(self, *_):
         last_page = self._current_page
