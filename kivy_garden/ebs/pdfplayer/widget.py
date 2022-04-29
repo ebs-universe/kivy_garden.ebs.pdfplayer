@@ -56,6 +56,7 @@ class PDFPlayer(FloatLayout):
                                      exit_retrace=exit_retrace)
         self._gallery.transition = 'in_out_expo'
 
+        self.register_event_type('on_done')
         self._current_page = -1
         self._task = None
         self._cancelled = False
