@@ -119,6 +119,7 @@ class PDFPlayer(FloatLayout):
             if self.loop:
                 return 0
             else:
+                self.stop()
                 self.dispatch('on_done')
 
     def on_done(self, *args):
